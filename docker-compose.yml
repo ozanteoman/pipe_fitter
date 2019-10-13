@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./../pipe_fitter_volumes/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    volumes:
+      - ./:/django_backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
