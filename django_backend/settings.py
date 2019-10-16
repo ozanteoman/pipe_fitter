@@ -35,14 +35,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # new
+    'django.contrib.sites',  # new
 
     # 3rd party
-    'allauth', # new
-    'allauth.account', # new
-    'allauth.socialaccount', # new
+    'rest_framework',
+    'allauth',  # new
+    'allauth.account',  # new
+    'allauth.socialaccount',  # new
 
-    'project_app' #local
+    'project_app'  # local
 ]
 
 AUTH_USER_MODEL = 'project_app.User'
@@ -67,7 +68,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,7 +83,7 @@ ROOT_URLCONF = 'django_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
