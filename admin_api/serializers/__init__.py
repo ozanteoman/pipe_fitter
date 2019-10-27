@@ -1,0 +1,1 @@
+from admin_api.serializers.service import ServiceSerializer

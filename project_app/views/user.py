@@ -11,10 +11,6 @@ from project_app.serializers import (
     UserBasicInfoSerializer
 )
 
-from project_app.permissions import (
-    IsSelf
-)
-
 
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()

@@ -3,11 +3,10 @@ from django.conf.urls import include
 
 from rest_framework import routers
 
-from project_app.views import *
+from admin_api.views import ServiceViewSet
 
 router = routers.SimpleRouter(trailing_slash=False)
-router.register(r'users', UserViewSet)
-router.register(r'services', ServiceViewSet)
+router.register('services', ServiceViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
