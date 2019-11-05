@@ -1,10 +1,12 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from project_app.choices import UserType
 
 
 class User(AbstractUser):
     image = models.ImageField(verbose_name="profile_picture", null=True)
     birthday = models.DateField(null=True)
+    user_type = models.IntegerField(choices=UserType.STATUS, default=1)
 
     def __str__(self):
         return self.username

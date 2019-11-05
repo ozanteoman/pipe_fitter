@@ -1,3 +1,3 @@
-from project_app.serializers.user import ChangeProfilePhotoSerializer
-from project_app.serializers.user import UserBasicInfoSerializer
+from project_app.serializers.user import ChangeProfilePhotoSerializer, UserBasicInfoSerializer
 from project_app.serializers.service import ServiceSerializer
+from project_app.serializers.topic import TopicCreateSerializer
