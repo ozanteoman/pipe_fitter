@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from rest_framework.parsers import MultiPartParser
+from rest_framework.filters import SearchFilter
 from rest_framework.permissions import (
     IsAuthenticatedOrReadOnly
 )
@@ -16,6 +17,8 @@ class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = UserBasicInfoSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['first_name', 'last_name', 'username']
 
     def get_object(self):
         if self.action == "change_profile_image":

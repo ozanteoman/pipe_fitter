@@ -1,3 +1,3 @@
 from admin_api.serializers.service import ServiceSerializer
 from admin_api.serializers.topic import ChangeTopicStatusSerializer, TopicSerializer, TopicEditSerializer
-from admin_api.serializers.order import OrderDetailSerializer
+from admin_api.serializers.order import OrderDetailSerializer, CompleteOrderSerializer,UpdateOrderPriceSerializer
