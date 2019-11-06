@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # new
 
     # 3rd party
+    'corsheaders',
     'rest_framework',
     'allauth',  # new
     'allauth.account',  # new
@@ -69,6 +70,7 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
