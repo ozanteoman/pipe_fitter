@@ -3,6 +3,8 @@ from project_app.models import Service
 
 
 class ServiceSerializer(serializers.ModelSerializer):
+    slug = serializers.SlugField(read_only=True)
+
     class Meta:
         model = Service
-        fields = ["title", "price"]
+        fields = ["title", "price","slug"]
