@@ -8,11 +8,6 @@ RUN mkdir /django_backend
 
 WORKDIR /django_backend
 
-ADD ./docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-CMD bash -c /docker-entrypoint.sh
-
-
 ADD requirements.txt /django_backend/
 
 RUN pip3 install --upgrade pip
